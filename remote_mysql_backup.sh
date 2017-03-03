@@ -55,8 +55,7 @@ mysql_pwd="mysql_pwd"
 checksum_file="checksums.txt"
 next_checksums="next_checksums.txt"
 
-# Destination folder for rsync, requires editing. 
-# The folder path must end with a slash '/'.
+# Destination folder for rsync, requires editing.
 rsync_dest="<user>@<server>:<target folder path>/"
 
 mkdir -p $work_folder
