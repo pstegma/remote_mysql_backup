@@ -86,6 +86,8 @@ IFS="
 function backup_db() {
     echo "Backing up database $1"
     dump_file="$tmp_folder/$1.sql.gz"
+    # To backup large databases you may wish to 
+    # add the option --single-transaction to the mysqldump command
     mysqldump -u $mysql_user --password=$mysql_pwd --databases $1 | gzip -c > $dump_file
     rsync -avvz --progress $dump_file $rsync_dest
     rm $dump_file
